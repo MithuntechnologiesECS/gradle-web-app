@@ -34,10 +34,10 @@ node{
         def dockerRun = ' docker run  -d -p 8080:8080 --name gradle-web-app suryadattaharish/gradle-web-app'
          
          sshagent(['DOCKER_SERVER']) {
-          sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.224.107.58 docker stop gradle-web-app || true'
-          sh 'ssh  ubuntu@18.224.107.58 docker rm gradle-web-app || true'
-          sh 'ssh  ubuntu@18.224.107.58 docker rmi -f  $(docker images -q) || true'
-          sh "ssh  ubuntu@18.224.107.58 ${dockerRun}"
+          sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.17.110 docker stop gradle-web-app || true'
+          sh 'ssh  ubuntu@172.31.17.110 docker rm gradle-web-app || true'
+          sh 'ssh  ubuntu@172.31.17.110 docker rmi -f  $(docker images -q) || true'
+          sh "ssh  ubuntu@172.31.17.110 ${dockerRun}"
        }
        
     }
